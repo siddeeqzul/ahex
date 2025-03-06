@@ -189,18 +189,19 @@
             // Get your Google Apps Script Web App URL
             // Replace this with your actual deployed Web App URL after setting up the Apps Script
             // This should point to a script connected to: https://docs.google.com/spreadsheets/d/1i-a5KX5ZVOy1gn4voy0btPlcAlJfevu4l9AmpCPVcBo/edit
-            const scriptURL = 'https://script.google.com/macros/s/AKfycbxyVbGSZzwJD_E99KUzWVcQYQ4BC5KFllPVz7EEWjiIjxJVx_oJjjSFhMxFyXk2pEYn/exec';
+            const scriptURL = 'YOUR_GOOGLE_APPS_SCRIPT_WEB_APP_URL_HERE';
             
             // Use JSONP approach with iframe to bypass CORS
             const iframe = document.createElement('iframe');
             iframe.style.display = 'none';
+            iframe.name = 'hidden_iframe'; // Give the iframe a name
             document.body.appendChild(iframe);
             
             // Create a form within the iframe that will submit to the Apps Script
             const form = document.createElement('form');
             form.method = 'POST';
             form.action = scriptURL;
-            form.target = '_blank'; // This will open response in new tab/window which we'll close immediately
+            form.target = 'hidden_iframe'; // Target the iframe instead of _blank
             
             // Add all form fields to the iframe form
             formData.forEach((value, key) => {
