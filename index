@@ -1,0 +1,245 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exhibition Booth Registration Form</title>
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        .form-check-input {
+            margin-right: 5px;
+        }
+        .success-message, .error-message {
+            display: none;
+        }
+    </style>
+</head>
+<body>
+    <div class="container py-5">
+        <div class="row justify-content-center">
+            <div class="col-lg-8">
+                <div class="card shadow">
+                    <div class="card-header bg-primary text-white">
+                        <h2 class="mb-0">Exhibition Booth Registration Form</h2>
+                    </div>
+                    <div class="card-body">
+                        <div id="successMessage" class="alert alert-success success-message">
+                            Registration submitted successfully!
+                        </div>
+                        <div id="errorMessage" class="alert alert-danger error-message">
+                            An error occurred. Please try again.
+                        </div>
+                        
+                        <form id="crmForm">
+                            <div class="mb-3">
+                                <label for="companyName" class="form-label">Company Name</label>
+                                <input type="text" class="form-control" id="companyName" name="companyName" required>
+                            </div>
+                            
+                            <div class="mb-3">
+                                <label for="companyAddress" class="form-label">Company Address</label>
+                                <textarea class="form-control" id="companyAddress" name="companyAddress" rows="3" required></textarea>
+                            </div>
+                            
+                            <div class="mb-3">
+                                <label for="email" class="form-label">Email</label>
+                                <input type="email" class="form-control" id="email" name="email" required>
+                            </div>
+                            
+                            <div class="mb-3">
+                                <label for="picName" class="form-label">PIC Name</label>
+                                <input type="text" class="form-control" id="picName" name="picName" required>
+                            </div>
+                            
+                            <div class="mb-3">
+                                <label for="phone" class="form-label">Phone Number</label>
+                                <input type="tel" class="form-control" id="phone" name="phone" required>
+                            </div>
+                            
+                            <div class="mb-3">
+                                <label for="productType" class="form-label">Type Of Products</label>
+                                <select class="form-select" id="productType" name="productType" required>
+                                    <option value="" disabled selected>Select product type</option>
+                                    <option value="Food and Beverages">Food and Beverages</option>
+                                    <option value="Cosmetics">Cosmetics</option>
+                                    <option value="Healthcare">Healthcare</option>
+                                    <option value="Fashion">Fashion</option>
+                                    <option value="Toys">Toys</option>
+                                </select>
+                            </div>
+                            
+                            <div class="mb-3">
+                                <label for="productDetails" class="form-label">Product Details</label>
+                                <textarea class="form-control" id="productDetails" name="productDetails" rows="4" required></textarea>
+                            </div>
+                            
+                            <div class="mb-3">
+                                <label for="boothType" class="form-label">Type Of Booth</label>
+                                <select class="form-select" id="boothType" name="boothType" required>
+                                    <option value="" disabled selected>Select booth type</option>
+                                    <option value="Standard Booth">Standard Booth</option>
+                                    <option value="Preferred Booth">Preferred Booth</option>
+                                    <option value="Premium Preferred Booth">Premium Preferred Booth</option>
+                                </select>
+                            </div>
+                            
+                            <div class="mb-3">
+                                <label for="boothQuantity" class="form-label">Booth Quantity (Max 5)</label>
+                                <input type="number" class="form-control w-25" id="boothQuantity" name="boothQuantity" min="1" max="5" value="1" required>
+                            </div>
+                            
+                            <div class="mb-3">
+                                <label class="form-label">Additional Items</label>
+                                <div class="row">
+                                    <div class="col-md-4">
+                                        <div class="form-check mb-2">
+                                            <input class="form-check-input" type="checkbox" id="freezer" name="additionalItems" value="Freezer">
+                                            <label class="form-check-label" for="freezer">Freezer</label>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-4">
+                                        <div class="form-check mb-2">
+                                            <input class="form-check-input" type="checkbox" id="refrigerator" name="additionalItems" value="Refrigerator">
+                                            <label class="form-check-label" for="refrigerator">Refrigerator</label>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-4">
+                                        <div class="form-check mb-2">
+                                            <input class="form-check-input" type="checkbox" id="table" name="additionalItems" value="Table">
+                                            <label class="form-check-label" for="table">Table</label>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-4">
+                                        <div class="form-check mb-2">
+                                            <input class="form-check-input" type="checkbox" id="chair" name="additionalItems" value="Chair">
+                                            <label class="form-check-label" for="chair">Chair</label>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-4">
+                                        <div class="form-check mb-2">
+                                            <input class="form-check-input" type="checkbox" id="plugPoint" name="additionalItems" value="Plug Point">
+                                            <label class="form-check-label" for="plugPoint">Plug Point</label>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-4">
+                                        <div class="form-check mb-2">
+                                            <input class="form-check-input" type="checkbox" id="plugPoint24" name="additionalItems" value="24/7 Plug Point">
+                                            <label class="form-check-label" for="plugPoint24">24/7 Plug Point</label>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <div class="mb-3">
+                                <label for="stockLogistic" class="form-label">Stock Logistic</label>
+                                <textarea class="form-control" id="stockLogistic" name="stockLogistic" rows="3"></textarea>
+                            </div>
+                            
+                            <div class="mb-3">
+                                <label for="additionalRequest" class="form-label">Additional Request</label>
+                                <textarea class="form-control" id="additionalRequest" name="additionalRequest" rows="3" placeholder="Hotel, transportation, sim card, etc."></textarea>
+                            </div>
+                            
+                            <div class="d-grid gap-2">
+                                <button type="submit" class="btn btn-primary">Submit Registration</button>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Bootstrap JS Bundle with Popper -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
+    
+    <script>
+        document.getElementById('crmForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            
+            // Get form data
+            const formData = new FormData(this);
+            
+            // Special handling for checkboxes (additionalItems)
+            const additionalItems = [];
+            document.querySelectorAll('input[name="additionalItems"]:checked').forEach(function(checkbox) {
+                additionalItems.push(checkbox.value);
+            });
+            
+            // Remove individual checkboxes from formData
+            formData.delete('additionalItems');
+            
+            // Add the combined string of additional items
+            if (additionalItems.length > 0) {
+                formData.append('additionalItems', additionalItems.join(', '));
+            } else {
+                formData.append('additionalItems', 'None');
+            }
+            
+            // Prepare data in the format that Google Apps Script can process via URL parameters
+            const urlParams = new URLSearchParams();
+            formData.forEach((value, key) => {
+                urlParams.append(key, value);
+            });
+            
+            // Add timestamp
+            urlParams.append('timestamp', new Date().toISOString());
+            
+            // Get your Google Apps Script Web App URL
+            // Replace this with your actual deployed Web App URL after setting up the Apps Script
+            // This should point to a script connected to: https://docs.google.com/spreadsheets/d/1i-a5KX5ZVOy1gn4voy0btPlcAlJfevu4l9AmpCPVcBo/edit
+            const scriptURL = 'YOUR_GOOGLE_APPS_SCRIPT_WEB_APP_URL_HERE';
+            
+            // Use JSONP approach with iframe to bypass CORS
+            const iframe = document.createElement('iframe');
+            iframe.style.display = 'none';
+            document.body.appendChild(iframe);
+            
+            // Create a form within the iframe that will submit to the Apps Script
+            const form = document.createElement('form');
+            form.method = 'POST';
+            form.action = scriptURL;
+            form.target = '_blank'; // This will open response in new tab/window which we'll close immediately
+            
+            // Add all form fields to the iframe form
+            formData.forEach((value, key) => {
+                const input = document.createElement('input');
+                input.type = 'hidden';
+                input.name = key;
+                input.value = value;
+                form.appendChild(input);
+            });
+            
+            // Add timestamp field
+            const timestampInput = document.createElement('input');
+            timestampInput.type = 'hidden';
+            timestampInput.name = 'timestamp';
+            timestampInput.value = new Date().toISOString();
+            form.appendChild(timestampInput);
+            
+            // Append the form to the iframe and submit it
+            iframe.contentDocument.body.appendChild(form);
+            
+            try {
+                form.submit();
+                document.getElementById('successMessage').style.display = 'block';
+                document.getElementById('crmForm').reset();
+                setTimeout(() => {
+                    document.getElementById('successMessage').style.display = 'none';
+                    // Clean up the iframe after submission
+                    setTimeout(() => document.body.removeChild(iframe), 500);
+                }, 5000);
+            } catch (error) {
+                console.error('Error:', error);
+                document.getElementById('errorMessage').style.display = 'block';
+                setTimeout(() => {
+                    document.getElementById('errorMessage').style.display = 'none';
+                }, 5000);
+                // Clean up the iframe after error
+                document.body.removeChild(iframe);
+            }
+        });
+    </script>
+</body>
+</html>
